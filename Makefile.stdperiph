@@ -1,0 +1,17 @@
+#CFLAGS += -DSTM32F030
+#CFLAGS += -DUSE_STDPERIPH_DRIVER
+
+CFLAGS += \
+	-ILibraries/STM32F0xx_StdPeriph_Driver/inc \
+	-ILibraries/CMSIS/Device/ST/STM32F0xx/Include \
+	-ILibraries/CMSIS/Include
+
+OBJS += \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_rcc.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_pwr.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_adc.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_dma.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_tim.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_gpio.o \
+	Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_misc.o
