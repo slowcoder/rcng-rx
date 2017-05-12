@@ -2,10 +2,10 @@
 CROSS ?= /opt/gcc-arm-none-eabi-4_9-2015q2/bin/arm-none-eabi
 CC := $(CROSS)-gcc
 
-CFLAGS := -g -Os -Wall -mlittle-endian -mthumb -mcpu=cortex-m0 -mthumb-interwork
+CFLAGS := -g -O0 -Wall -mlittle-endian -mthumb -mcpu=cortex-m0 -mthumb-interwork
 CFLAGS += -fdata-sections -ffunction-sections
 CFLAGS += -std=gnu99
-CFLAGS += -DUSE_HW_SPI
+#CFLAGS += -DUSE_HW_SPI
 CFLAGS += -DGIT_BASE_REVISION=\"`git rev-parse --short HEAD`\"
 LDFLAGS := -nostdlib -nodefaultlibs -nostartfiles -Wl,-TSTM32F030C8_FLASH.ld
 #LDFLAGS +=  -Wl,--print-gc-sections
@@ -25,6 +25,8 @@ OBJS := \
 	src/uart.o \
 	src/servo.o \
 	src/leds.o \
+	src/nrf24l01plus/nrf24.o \
+	src/nrf24l01plus/hal_stm32.o \
 	src/cli/cli.o \
 	src/cli/cmd_free.o \
 	src/cli/cmd_info.o \

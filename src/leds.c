@@ -27,7 +27,6 @@ int leds_init(void) {
 	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_7;
 	GPIO_Init(GPIOF, &GPIO_InitStructure);
 
-
 	return 0;
 }
 
